@@ -24,12 +24,6 @@
                             </a>
                             <ul class="nav nav-tabs flex-column mt-4">
                                 <li class="nav-item py-2 py-sm-0">
-                                    <a href="#" class="nav-link text-white">
-                                        <i class="fs-5 fa fa-gauge"></i><span
-                                            class="fs-4 ms3 d-none d-sm-inline">Dashboard</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item py-2 py-sm-0">
                                     <a href="/home" class="nav-link text-white">
                                         <i class="fs-5 fa fa-house"></i><span class="fs-4 ms3 d-none d-sm-inline">Home</span>
                                     </a>
@@ -43,18 +37,43 @@
                                 <li class="nav-item py-2 py-sm-0">
                                     <a href="/pension" class="nav-link text-white">
                                         <i class="fs-5 fa fa-table-list"></i><span
-                                            class="fs-4 ms3 d-none d-sm-inline">Pension</span>
+                                            class="fs-4 ms3 d-none d-sm-inline">Pensions</span>
                                     </a>
                                 </li>
                                 <li class="nav- py-2 py-sm-0">
                                     <a href="/mortgage" class="nav-link text-white">
-                                        <i class="fs-5 fa fa-clipboard"></i><span
-                                            class="fs-4 ms3 d-none d-sm-inline">Mortgage</span>
+                                        <i class="fs-5 fa fa-clipboard"></i>
+                                        <span class="fs-4 ms3 d-none d-sm-inline">Mortgages</span>
                                     </a>
                                 </li>
                                 <li class="nav- py-2 py-sm-0">
-                                    <a href="#" class="nav-link text-white">
-                                        <i class="fs-5 fa fa-users"></i><span class="fs-4 d-none d-sm-inline">Customers</span>
+                                    <a href="/history" class="nav-link text-white">
+                                        <i class="fs-5 fa fa-users"></i>
+                                        <span class="fs-4 d-none d-sm-inline">History</span>
+                                    </a>
+                                </li>
+                                <li class="nav- py-2 py-sm-0">
+                                    <a href="/property" class="nav-link text-white">
+                                        <i class="fs-5 fa fa-users"></i>
+                                        <span class="fs-4 d-none d-sm-inline">Properties</span>
+                                    </a>
+                                </li>
+                                <li class="nav- py-2 py-sm-0">
+                                    <a href="/personal" class="nav-link text-white">
+                                        <i class="fs-5 fa fa-users"></i>
+                                        <span class="fs-4 d-none d-sm-inline">Personal</span>
+                                    </a>
+                                </li>
+                                <li class="nav- py-2 py-sm-0">
+                                    <a href="/vpen" class="nav-link text-white">
+                                        <i class="fs-5 fa fa-users"></i>
+                                        <span class="fs-4 d-none d-sm-inline">Vpens</span>
+                                    </a>
+                                </li>
+                                <li class="nav- py-2 py-sm-0">
+                                    <a href="/leavecredits" class="nav-link text-white">
+                                        <i class="fs-5 fa fa-users"></i>
+                                        <span class="fs-4 d-none d-sm-inline">Leave Credits</span>
                                     </a>
                                 </li>
                             </ul>
