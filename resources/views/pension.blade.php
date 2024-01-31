@@ -1,4 +1,4 @@
-<x-home>
+<x-display>
     <div>
         <table class="table table-sm table-bordered">
             <tr>

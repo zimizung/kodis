@@ -30,7 +30,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item py-2 py-sm-0">
-                                    <a href="#" class="nav-link text-white">
+                                    <a href="/home" class="nav-link text-white">
                                         <i class="fs-5 fa fa-house"></i><span class="fs-4 ms3 d-none d-sm-inline">Home</span>
                                     </a>
                                 </li>
@@ -47,9 +47,9 @@
                                     </a>
                                 </li>
                                 <li class="nav- py-2 py-sm-0">
-                                    <a href="#" class="nav-link text-white">
+                                    <a href="/mortgage" class="nav-link text-white">
                                         <i class="fs-5 fa fa-clipboard"></i><span
-                                            class="fs-4 ms3 d-none d-sm-inline">Orders</span>
+                                            class="fs-4 ms3 d-none d-sm-inline">Mortgage</span>
                                     </a>
                                 </li>
                                 <li class="nav- py-2 py-sm-0">
