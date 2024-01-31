@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\pensions;
 use Illuminate\Http\Request;
 
 class PensionsController extends Controller
@@ -13,7 +14,26 @@ class PensionsController extends Controller
      */
     public function index()
     {
-        //
+        $AllPensionRec = pensions::get()->toArray();
+        $records = [];
+        $i = 0;
+
+        foreach($AllPensionRec as $pensionRec){
+            $records[$i]['id'] = $pensionRec['id'];
+            $records[$i]['kodisno'] = $pensionRec['kodisno'];
+            $records[$i]['pfund'] = $pensionRec['pfund'];
+            $records[$i]['pensno'] = $pensionRec['pensno'];
+            $records[$i]['admtofund'] = $pensionRec['admtofund'];
+            $records[$i]['admservcounts'] = $pensionRec['admservcounts'];
+            $records[$i]['pensexit'] = $pensionRec['pensexit'];
+            $records[$i]['salary'] = $pensionRec['salary'];
+            $records[$i]['noncontr'] = $pensionRec['noncontr'];
+            $records[$i]['reason'] = $pensionRec['reason'];
+            $records[$i]['remarkes'] = $pensionRec['remarkes'];
+            $i++;
+        }
+        // echo '<pre>'; print_r($records);die;
+        return view('pension',compact('records'));
     }
 
     /**
