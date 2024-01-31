@@ -11,6 +11,7 @@ use App\Http\Controllers\MortgagesController;
 use App\Http\Controllers\PersonalsController;
 use App\Http\Controllers\PropertiesController;
 use App\Http\Controllers\LeavecreditsController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
