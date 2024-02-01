@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\leaves;
 use Illuminate\Http\Request;
 
 class LeavesController extends Controller
@@ -13,7 +14,22 @@ class LeavesController extends Controller
      */
     public function index()
     {
-        //
+        $allLeaveRec = leaves::get()->toArray();
+        $leaves = [];
+        $i = 0;
+
+        foreach($allLeaveRec as $leaveRec){
+            $leaves[$i]['id'] = $leaveRec['id'];
+            $leaves[$i]['kodisno'] = $leaveRec['kodisno'];
+            $leaves[$i]['leavetype'] = $leaveRec['leavetype'];
+            $leaves[$i]['leavecondition'] = $leaveRec['leavecondition'];
+            $leaves[$i]['leavefrom'] = $leaveRec['leavefrom'];
+            $leaves[$i]['leaveto'] = $leaveRec['leaveto'];
+            $leaves[$i]['days'] = $leaveRec['days'];
+            $leaves[$i]['payment'] = $leaveRec['payment'];
+            $i++;
+        }
+        return view('leave',compact('leaves'));
     }
 
     /**
