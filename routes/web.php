@@ -31,6 +31,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::post('/userDetail/{kodis}', [HomeController::class, 'getUser'])->name('userDetails');
 
 Route::get('/history', [HistoriesController::class, 'index'])->name('history');
 Route::get('/leavecredit', [LeavecreditsController::class, 'index'])->name('leavecredits');

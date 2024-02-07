@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/all.css">
 
     <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     <style>
         #myImage {
