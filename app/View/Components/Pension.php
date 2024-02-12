@@ -11,10 +11,10 @@ class Pension extends Component
      *
      * @return void
      */
-    public $pension;
-    public function __construct($pension)
+    public $pensions;
+    public function __construct($pensions)
     {
-        $this->pension = $pension;
+        $this->pensions = $pensions;
     }
 
     /**

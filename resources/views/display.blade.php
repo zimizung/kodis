@@ -61,33 +61,43 @@
                                     <div>
                                         <div style="display: grid; grid-template-columns: 20% 20% 20% 20% 20%;">
                                             <div>
-                                                <button data-toggle="modal" data-target="#penModal{{$userPension['kodisno']}}" class="m-2">Pension</button>
-                                                @if ($userPension != null)
-                                                    <x-pension :pension="$userPension"/>
+                                                @if ($userPensions != null)
+                                                    <button data-toggle="modal" data-target="#penModal{{$userPensions[0]['kodisno']}}" class="m-2 btn btn-primary">Pension</button>
+                                                    <x-pension :pensions="$userPensions"/>
+                                                @else
+                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">Pension</button>
                                                 @endif
                                             </div>
                                             <div>
-                                                <button data-toggle="modal" data-target="#proModal{{$userPension['kodisno']}}" class="m-2">Property</button>
                                                 @if ($userProperty != null)
-                                                    <x-property :property="$userProperty"/>
+                                                    <button data-toggle="modal" data-target="#proModal{{$userProperty[0]['kodisno']}}" class="m-2 btn btn-primary">Property</button>
+                                                    <x-property :properties="$userProperty"/>
+                                                @else
+                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">Property</button>
                                                 @endif
                                             </div>
                                             <div>
-                                                <button data-toggle="modal" data-target="#morModal{{$userPension['kodisno']}}" class="m-2">Mortgage</button>
                                                 @if ($userMortgage != null)
-                                                    <x-mortgage :mortgage="$userMortgage"/>
+                                                    <button data-toggle="modal" data-target="#morModal{{$userMortgage[0]['kodisno']}}" class="m-2 btn btn-primary">Mortgage</button>
+                                                    <x-mortgage :mortgages="$userMortgage"/>
+                                                @else
+                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">Mortgage</button>
                                                 @endif
                                             </div>
                                             <div>
-                                                <button data-toggle="modal" data-target="#levModal{{$userPension['kodisno']}}" class="m-2">Leave</button>
                                                 @if ($userLeave != null)
-                                                    <x-leave :leave="$userLeave"/>
+                                                    <button data-toggle="modal" data-target="#levModal{{$userLeave[0]['kodisno']}}" class="m-2 btn btn-primary">Leave</button>
+                                                    <x-leave :leaves="$userLeave"/>
+                                                @else
+                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">Leave</button>
                                                 @endif
                                             </div>
                                             <div>
-                                                <button data-toggle="modal" data-target="#hisModal{{$userPension['kodisno']}}" class="m-2">History</button>
                                                 @if ($userHistory != null)
-                                                    <x-history :history="$userHistory"/>
+                                                    <button data-toggle="modal" data-target="#hisModal{{$userHistory[0]['kodisno']}}" class="m-2 btn btn-primary">History</button>
+                                                    <x-history :histories="$userHistory"/>
+                                                @else
+                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">History</button>
                                                 @endif
                                             </div>
                                         </div>
@@ -99,4 +109,5 @@
                 </div>
             </div>
         </div>
+        <x-response/>
     @endsection

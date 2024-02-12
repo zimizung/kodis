@@ -27,44 +27,60 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $allPersonalRec = personals::paginate(10);
-        // echo '<pre>'; print_r($allPersonalRec);die;
+        $filter = $request->searchParameter;
+        
+        if($filter){
+            $allPersonalRec = personals::where('kodisno', 'LIKE', '%' . $filter . '%')->orWhere('persalno', 'LIKE', '%' . $filter . '%')->orWhere('surname', 'LIKE', '%' . $filter . '%')->paginate(10);
+        }
+        else{
+            $allPersonalRec = personals::paginate(10);
+        }
+        
         return view('home', compact('allPersonalRec'));
     }
     public function getUser($kodis){
 
         $userDetails = personals::where('kodisno', '=', $kodis)->first();
 
-        $userPension = pensions::where('kodisno', '=', $kodis)->first();
-        if($userPension != null){
-            $userPension->surname = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+        $userPensions = pensions::where('kodisno', '=', $kodis)->get()->toArray();
+        if($userPensions != null){
+            foreach($userPensions as &$Pensions){
+                $Pensions['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            }
         }
 
-
-        $userLeave = leaves::where('kodisno', '=', $kodis)->first();
+        $userLeave = leaves::where('kodisno', '=', $kodis)->get()->toArray();
         if($userLeave != null){
-            $userLeave->surname = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            foreach($userLeave as &$leave){
+                $leave['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            }
         }
 
-        $userHistory = histories::where('kodisno', '=', $kodis)->first();
+        $userHistory = histories::where('kodisno', '=', $kodis)->get()->toArray();
         if($userHistory != null){
-            $userHistory->surname = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            foreach($userHistory as &$history){
+                $history['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            }
         }
 
-        $userProperty = properties::where('kodisno', '=', $kodis)->first();
+        $userProperty = properties::where('kodisno', '=', $kodis)->get()->toArray();
         if($userProperty != null){
-            $userProperty->surname = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            foreach($userProperty as &$property){
+                $property['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            }
         }
 
-        $userMortgage = mortgages::where('kodisno', '=', $kodis)->first();
+        $userMortgage = mortgages::where('kodisno', '=', $kodis)->get()->toArray();
         if($userMortgage != null){
-            $userMortgage->surname = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            foreach($userMortgage as &$mortgage){
+                $mortgage['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
+            }
         }
+        // echo '<pre>'; print_r($userProperty);die;
 
-        // echo '<pre>'; print_r($userMortgage);die;
 
-        return view('display', compact('userDetails', 'userPension', 'userMortgage', 'userProperty', 'userHistory', 'userLeave'));
+        return view('display', compact('userDetails', 'userPensions', 'userMortgage', 'userProperty', 'userHistory', 'userLeave'));
     }
 }

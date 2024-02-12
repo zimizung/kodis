@@ -2,7 +2,10 @@
     @section('content')
         <div class="container">
             <div>
-                <input type="text"><button>Search</button>
+                <form method="GET" action="{{ url('home') }}">
+                    <input name="searchParameter" type="text" class="rounded">
+                    <button type="submit" class=" btn btn-primary">Search</button>
+                </form>
             </div>
             <div>
                 <table class="table table-sm table-bordered">

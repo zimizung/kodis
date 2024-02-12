@@ -11,10 +11,10 @@ class History extends Component
      *
      * @return void
      */
-    public $history;
-    public function __construct($history)
+    public $histories;
+    public function __construct($histories)
     {
-        $this->history = $history;
+        $this->histories = $histories;
     }
 
     /**
