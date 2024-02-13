@@ -6,11 +6,14 @@
                     <header class="bg-white shadow">
                         <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
 
-                            <div style="display:grid; grid-template-columns:50% 50%">
+                            <div style="display:grid; grid-template-columns:50% 50%; padding-top:10px">
                                 <div>
                                     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                                         {{ __('Personal Details') }}
                                     </h2>
+                                </div>
+                                <div style="display: flex; justify-content:right;">
+                                    <a href="{{ url('/home') }}"><button class="btn btn-primary">Home</button></a>
                                 </div>
                             </div>
 
@@ -60,54 +63,30 @@
                                 <div>
                                     <div>
                                         <div style="display: grid; grid-template-columns: 20% 20% 20% 20% 20%;">
-                                            <div>
-                                                @if ($userPensions != null)
-                                                    <button data-toggle="modal" data-target="#penModal{{$userPensions[0]['kodisno']}}" class="m-2 btn btn-primary">Pension</button>
-                                                    <x-pension :pensions="$userPensions"/>
-                                                @else
-                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">Pension</button>
-                                                @endif
-                                            </div>
-                                            <div>
-                                                @if ($userProperty != null)
-                                                    <button data-toggle="modal" data-target="#proModal{{$userProperty[0]['kodisno']}}" class="m-2 btn btn-primary">Property</button>
-                                                    <x-property :properties="$userProperty"/>
-                                                @else
-                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">Property</button>
-                                                @endif
-                                            </div>
-                                            <div>
-                                                @if ($userMortgage != null)
-                                                    <button data-toggle="modal" data-target="#morModal{{$userMortgage[0]['kodisno']}}" class="m-2 btn btn-primary">Mortgage</button>
-                                                    <x-mortgage :mortgages="$userMortgage"/>
-                                                @else
-                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">Mortgage</button>
-                                                @endif
-                                            </div>
-                                            <div>
-                                                @if ($userLeave != null)
-                                                    <button data-toggle="modal" data-target="#levModal{{$userLeave[0]['kodisno']}}" class="m-2 btn btn-primary">Leave</button>
-                                                    <x-leave :leaves="$userLeave"/>
-                                                @else
-                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">Leave</button>
-                                                @endif
-                                            </div>
-                                            <div>
-                                                @if ($userHistory != null)
-                                                    <button data-toggle="modal" data-target="#hisModal{{$userHistory[0]['kodisno']}}" class="m-2 btn btn-primary">History</button>
-                                                    <x-history :histories="$userHistory"/>
-                                                @else
-                                                    <button data-toggle="modal" data-target="#resModal" class="m-2 btn btn-primary">History</button>
-                                                @endif
-                                            </div>
+                                            <button id="mortBtn" class="m-2 btn btn-success">Mortgage</button>
+                                            <button id="leavBtn" class="m-2 btn btn-success">Leave</button>
+                                            <button id="pensBtn" class="m-2 btn btn-success">Pension</button>
+                                            <button id="propBtn" class="m-2 btn btn-success">Property</button>
+                                            <button id="histBtn" class="m-2 btn btn-success">History</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="cont2 py-10">
+                        <div style="margin:20px 0px 20px 0px;">
+                            <div class="bg-white overflow-hidden shadow sm:rounded-lg" style="padding:20px;">
+                                @include('components.mort')
+                                @include('components.leav')
+                                @include('components.hist')
+                                @include('components.pens')
+                                @include('components.prop')
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <x-response/>
     @endsection
+    <script src="{{ asset('js/toddle.js') }}"></script>

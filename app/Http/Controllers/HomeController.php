@@ -78,7 +78,7 @@ class HomeController extends Controller
                 $mortgage['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
             }
         }
-        // echo '<pre>'; print_r($userProperty);die;
+        // echo '<pre>'; print_r($userMortgage);die;
 
 
         return view('display', compact('userDetails', 'userPensions', 'userMortgage', 'userProperty', 'userHistory', 'userLeave'));

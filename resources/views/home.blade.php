@@ -3,7 +3,7 @@
         <div class="container">
             <div>
                 <form method="GET" action="{{ url('home') }}">
-                    <input name="searchParameter" type="text" class="rounded">
+                    <input name="searchParameter" type="text" class="rounded" placeholder="search by kodis, name, and persal">
                     <button type="submit" class=" btn btn-primary">Search</button>
                 </form>
             </div>
@@ -133,7 +133,7 @@
                         </tr>
                     @endforeach
                 </table>
-                {{-- {{ $allPersonalRec->links() }} --}}
+                {{ $allPersonalRec->links('pagination.bootstrap-4') }}
             </div>
         </div>
     @endsection
