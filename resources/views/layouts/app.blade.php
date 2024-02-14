@@ -14,6 +14,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="./Bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -43,10 +44,10 @@
         <nav class="navbar navbar-expand-md navbar-light navbar navbar-custom shadow-sm">
             <div class="container">
                
-                  <img id="myImage" src="{{ URL('images/logo.png')}}" alt="">
-                {{-- Commented by Me------<a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a> --}}
+                  
+                <a class="navbar-brand" href="{{ url('/home') }}">
+                    <img id="myImage" src="{{ URL('images/logo.png')}}" alt="">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,11 +68,11 @@
                                 </li>
                             @endif--}}
 
-                            @if (Route::has('register'))
+                            {{-- @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
-                            @endif 
+                            @endif  --}}
                         @else
                             <li {{--class="nav-item dropdown"--}}>
                                 <a {{--id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre--}}>
@@ -82,11 +83,11 @@
                                     <div class="dropdown open open p-3">
                                         <button class="btn border-none dropdown-toggle btn btn-light" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
-                                        <i class="fa fa-user"></i><span class="ms-2">Zimisele</span>
+                                        <i class="fa fa-user"></i><span class="ms-2">Logout</span>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="triggerId">
                                             {{--<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">--}}
-                                                <a class="nav-link navbar-custom {{--dropdown-item--}}" href="{{ route('logout') }}"
+                                                <a class="nav-link  {{--dropdown-item--}}" href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}

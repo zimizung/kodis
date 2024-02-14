@@ -2,7 +2,10 @@
     @section('content')
         <div class="container">
             <div>
-                <input type="text"><button>Search</button>
+                <form method="GET" action="{{ url('home') }}">
+                    <input name="searchParameter" type="text" class="rounded" placeholder="search by kodis, name, and persal">
+                    <button type="submit" class=" btn btn-primary">Search</button>
+                </form>
             </div>
             <div>
                 <table class="table table-sm table-bordered">
@@ -124,13 +127,13 @@
                             <td>
                                 <form method="POST" action="{{ route('userDetails',['kodis' => $PersonalRec['kodisno']]) }}">
                                     @csrf
-                                    <button type="submit" class="btn btn-success">Open</button>
+                                    <button type="submit" class="btn btn-primary">Open</button>
                                 </form>
                             </td>
                         </tr>
                     @endforeach
                 </table>
-                {{-- {{ $allPersonalRec->links() }} --}}
+                {{ $allPersonalRec->links('pagination.bootstrap-4') }}
             </div>
         </div>
     @endsection
