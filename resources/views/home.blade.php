@@ -127,7 +127,7 @@
                             <td>
                                 <form method="POST" action="{{ route('userDetails',['kodis' => $PersonalRec['kodisno']]) }}">
                                     @csrf
-                                    <button type="submit" class="btn btn-success">Open</button>
+                                    <button type="submit" class="btn btn-primary">Open</button>
                                 </form>
                             </td>
                         </tr>

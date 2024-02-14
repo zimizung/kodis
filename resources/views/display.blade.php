@@ -63,11 +63,11 @@
                                 <div>
                                     <div>
                                         <div style="display: grid; grid-template-columns: 20% 20% 20% 20% 20%;">
-                                            <button id="mortBtn" class="m-2 btn btn-success">Mortgage</button>
-                                            <button id="leavBtn" class="m-2 btn btn-success">Leave</button>
-                                            <button id="pensBtn" class="m-2 btn btn-success">Pension</button>
-                                            <button id="propBtn" class="m-2 btn btn-success">Property</button>
-                                            <button id="histBtn" class="m-2 btn btn-success">History</button>
+                                            <button id="mortBtn" class="m-2 btn btn-primary">Mortgage</button>
+                                            <button id="leavBtn" class="m-2 btn btn-primary">Leave</button>
+                                            <button id="pensBtn" class="m-2 btn btn-primary">Pension</button>
+                                            <button id="propBtn" class="m-2 btn btn-primary">Property</button>
+                                            <button id="histBtn" class="m-2 btn btn-primary">History</button>
                                         </div>
                                     </div>
                                 </div>
