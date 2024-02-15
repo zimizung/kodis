@@ -31,14 +31,18 @@ class HomeController extends Controller
     {
         $filter = $request->searchParameter;
         
-        if($filter){
-            $allPersonalRec = personals::where('kodisno', 'LIKE', '%' . $filter . '%')->orWhere('persalno', 'LIKE', '%' . $filter . '%')->orWhere('surname', 'LIKE', '%' . $filter . '%')->paginate(10);
+        if(isset($filter)){
+            session()->put('filter',$filter);
+            $allPersonalRec = personals::where('kodisno', 'LIKE', '%' . $filter . '%')
+            ->orWhere('persalno', 'LIKE', '%' . $filter . '%')->orWhere('surname', 'LIKE', '%' . $filter . '%')
+            ->paginate(8);
         }
         else{
-            $allPersonalRec = personals::paginate(10);
+            $request->session()->forget('filter');
+            $allPersonalRec = personals::paginate(8);
         }
         
-        return view('home', compact('allPersonalRec'));
+        return view('home', compact('allPersonalRec','filter'));
     }
     public function getUser($kodis){
 
