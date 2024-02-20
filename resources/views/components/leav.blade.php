@@ -1,5 +1,9 @@
 <div id="leav" class="leav" style="display: none">
-    @if($userLeave != null)
+    @if($userLeave->isEmpty())
+        <div style="display: flex; justify-content:center; margin-bottom:5px;">
+            No Data Found
+        </div>
+    @else
         <table class="table table-sm table-bordered">
             <tr>
                 <td>
@@ -50,10 +54,7 @@
                 </tr>
             @endforeach
         </table>
-    @else
-        <div style="display: flex; justify-content:center; margin-bottom:5px;">
-            No Data Found
-        </div>
+        {{ $userLeave->links('pagination.bootstrap-4') }}
     @endif
     <div class="mb-2" style="display: flex; justify-content:center;">
         <button type="button" id="close" class="btn btn-danger closexc" data-dismiss="modal">Close</button>

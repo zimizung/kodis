@@ -1,5 +1,9 @@
 <div id="prop" class="prop" style="display: none">
-    @if($userProperty != null)
+    @if($userProperty->isEmpty())
+        <div style="display: flex; justify-content:center; margin-bottom:5px;">
+            No Data Found
+        </div>
+    @else
         <table class="table table-sm table-bordered">
             <tr>
                 <td>
@@ -86,10 +90,7 @@
                 </tr>
             @endforeach
         </table>
-    @else
-        <div style="display: flex; justify-content:center; margin-bottom:5px;">
-            No Data Found
-        </div>
+        {{ $userProperty->links('pagination.bootstrap-4') }}
     @endif
     <div class="mb-2" style="display: flex; justify-content:center;">
         <button type="button" id="close" class="btn btn-danger closexc" data-dismiss="modal">Close</button>

@@ -14,30 +14,7 @@ class MortgagesController extends Controller
      */
     public function index()
     {
-        $AllMortgageRec = mortgages::get()->toArray();
-        $mortgages = [];
-        $i = 0;
-
-        foreach($AllMortgageRec as $MortgageRec){
-            $mortgages[$i]['id'] = $MortgageRec['id'];
-            $mortgages[$i]['kodisno'] = $MortgageRec['kodisno'];
-            $mortgages[$i]['plotnumber'] = $MortgageRec['plotnumber'];
-            $mortgages[$i]['mortgages'] = $MortgageRec['mortgagee'];
-            $mortgages[$i]['period'] = $MortgageRec['period'];
-            $mortgages[$i]['loadamount'] = $MortgageRec['loanamount'];
-            $mortgages[$i]['dateregister'] = $MortgageRec['dateregister'];
-            $mortgages[$i]['firstinstallment'] = $MortgageRec['firstinstallment'];
-            $mortgages[$i]['fiche'] = $MortgageRec['fiche'];
-            $mortgages[$i]['accno'] = $MortgageRec['accno'];
-            $mortgages[$i]['allowmat'] = $MortgageRec['allowamt'];
-            $mortgages[$i]['workcompl'] = $MortgageRec['workcompl'];
-            $mortgages[$i]['stopallowance'] = $MortgageRec['stopallowance'];
-            $mortgages[$i]['terminateds'] = $MortgageRec['terminateds'];
-            $mortgages[$i]['reason'] = $MortgageRec['reason'];
-            $mortgages[$i]['remarks'] = $MortgageRec['remarkes'];
-            $i++;
-        }
-        return view('mortgage',compact('mortgages'));
+        //
     }
 
     /**

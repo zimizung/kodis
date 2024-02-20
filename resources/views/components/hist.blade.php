@@ -1,39 +1,43 @@
 <div id="hist" class="hist" style="display: none">
-    @if($userHistory != null)
+    @if($userHistory->isEmpty())
+        <div style="display: flex; justify-content:center; margin-bottom:5px;">
+            No Data Found
+        </div>
+    @else
         <table class="table table-sm table-bordered">
             <tr>
                 <td>
                     Kodisno
                 </td>
                 <td>
-                    compno
+                    Compno
                 </td>
                 <td>
-                    post
+                    Post
                 </td>
                 <td>
-                    datefrom
+                    Date From
                 </td>
                 <td>
-                    dateto
+                    Date To
                 </td>
                 <td>
-                    descr
+                    Descr
                 </td>
                 <td>
-                    category
+                    Category
                 </td>
                 <td>
-                    rg
+                    RG
                 </td>
                 <td>
-                    salary
+                    Salary
                 </td>
                 <td>
-                    hours
+                    Hours
                 </td>
                 <td>
-                    outs
+                    Outs
                 </td>
             </tr>
             @foreach ($userHistory as $history)
@@ -74,10 +78,7 @@
                 </tr>
             @endforeach
         </table>
-    @else
-        <div style="display: flex; justify-content:center; margin-bottom:5px;">
-            No Data Found
-        </div>
+        {{ $userHistory->links('pagination.bootstrap-4') }}
     @endif
     <div class="mb-2" style="display: flex; justify-content:center;">
         <button type="button" id="close" class="btn btn-danger closexc" data-dismiss="modal">Close</button>

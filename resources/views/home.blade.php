@@ -125,10 +125,9 @@
                                 {{$PersonalRec['time']}}
                             </td>
                             <td>
-                                <form method="POST" action="{{ route('userDetails',['kodis' => $PersonalRec['kodisno']]) }}">
-                                    @csrf
-                                    <button type="submit" class="btn btn-primary">Open</button>
-                                </form>
+                                <a href="{{ route('userDetails',['kodis' => $PersonalRec['kodisno']]) }}" class="btn btn-primary">
+                                    Open
+                                </a>
                             </td>
                         </tr>
                     @endforeach

@@ -44,41 +44,17 @@ class HomeController extends Controller
 
         $userDetails = personals::where('kodisno', '=', $kodis)->first();
 
-        $userPensions = pensions::where('kodisno', '=', $kodis)->get()->toArray();
-        if($userPensions != null){
-            foreach($userPensions as &$Pensions){
-                $Pensions['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
-            }
-        }
+        $userPensions = pensions::where('kodisno', '=', $kodis)->paginate(5);
 
-        $userLeave = leaves::where('kodisno', '=', $kodis)->get()->toArray();
-        if($userLeave != null){
-            foreach($userLeave as &$leave){
-                $leave['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
-            }
-        }
+        $userLeave = leaves::where('kodisno', '=', $kodis)->paginate(5);
 
-        $userHistory = histories::where('kodisno', '=', $kodis)->get()->toArray();
-        if($userHistory != null){
-            foreach($userHistory as &$history){
-                $history['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
-            }
-        }
+        $userHistory = histories::where('kodisno', '=', $kodis)->paginate(5);
 
-        $userProperty = properties::where('kodisno', '=', $kodis)->get()->toArray();
-        if($userProperty != null){
-            foreach($userProperty as &$property){
-                $property['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
-            }
-        }
+        $userProperty = properties::where('kodisno', '=', $kodis)->paginate(5);
 
-        $userMortgage = mortgages::where('kodisno', '=', $kodis)->get()->toArray();
-        if($userMortgage != null){
-            foreach($userMortgage as &$mortgage){
-                $mortgage['surname'] = strtok(ucwords(strtolower($userDetails['surname'])), " ");
-            }
-        }
-        // echo '<pre>'; print_r($userMortgage);die;
+        $userMortgage = mortgages::where('kodisno', '=', $kodis)->paginate(5);
+
+        // echo '<pre>'; print_r($userLeave);die;
 
 
         return view('display', compact('userDetails', 'userPensions', 'userMortgage', 'userProperty', 'userHistory', 'userLeave'));

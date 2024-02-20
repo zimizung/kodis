@@ -1,5 +1,9 @@
 <div id="mort" class="mort" style="display: none">
-    @if($userMortgage != null)
+    @if($userMortgage->isEmpty())
+        <div style="display: flex; justify-content:center; margin-bottom:5px;">
+            No Data Found
+        </div>
+    @else
         <table class="table table-sm table-bordered">
             <tr>
                 <td>
@@ -98,10 +102,7 @@
                 </tr>
             @endforeach
         </table>
-    @else
-        <div style="display: flex; justify-content:center; margin-bottom:5px;">
-            No Data Found
-        </div>
+        {{ $userMortgage->links('pagination.bootstrap-4') }}
     @endif
     <div class="mb-2" style="display: flex; justify-content:center;">
         <button type="button" id="close" class="btn btn-danger closexc" data-dismiss="modal">Close</button>
