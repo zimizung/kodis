@@ -3,7 +3,8 @@
         <div class="container">
             <div>
                 <form method="GET" action="{{ url('home') }}">
-                    <input name="searchParameter" type="text" class="rounded" placeholder="search by kodis, name, and persal">
+                    <input name="searchParameter" type="text" class="rounded" placeholder="search by kodis, name, and persal"
+                    value="{{$filter}}">
                     <button type="submit" class=" btn btn-primary">Search</button>
                 </form>
             </div>
@@ -132,7 +133,11 @@
                         </tr>
                     @endforeach
                 </table>
+                @if(isset($filter))
+                {{ $allPersonalRec->appends(request()->query())->links('pagination.bootstrap-4') }}
+            @else
                 {{ $allPersonalRec->links('pagination.bootstrap-4') }}
+            @endif
             </div>
         </div>
     @endsection
