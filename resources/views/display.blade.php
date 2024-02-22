@@ -63,25 +63,25 @@
                                 <div>
                                     <div>
                                         <div style="display: grid; grid-template-columns: 20% 20% 20% 20% 20%;">
-                                            <button id="mortBtn" class="m-2 btn btn-primary">Mortgage</button>
-                                            <button id="leavBtn" class="m-2 btn btn-primary">Leave</button>
-                                            <button id="pensBtn" class="m-2 btn btn-primary">Pension</button>
-                                            <button id="propBtn" class="m-2 btn btn-primary">Property</button>
-                                            <button id="histBtn" class="m-2 btn btn-primary">History</button>
+                                            <button class="m-2 btn btn-primary btn-action" data-route="{{ route('history',['kodis' => $userDetails['kodisno']]) }}">History</button>
+                                            <button class="m-2 btn btn-primary btn-action" data-route="{{ route('property',['kodis' => $userDetails['kodisno']]) }}">Property</button>
+                                            <button class="m-2 btn btn-primary btn-action" data-route="{{ route('leave',['kodis' => $userDetails['kodisno']]) }}">Leave</button>
+                                            <button class="m-2 btn btn-primary btn-action" data-route="{{ route('pension',['kodis' => $userDetails['kodisno']]) }}">Pension</button>
+                                            <button class="m-2 btn btn-primary btn-action" data-route="{{ route('mortgage',['kodis' => $userDetails['kodisno']]) }}">Mortgage</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                     <div class="cont2 py-10">
                         <div style="margin:20px 0px 20px 0px;">
                             <div class="bg-white overflow-hidden shadow sm:rounded-lg" style="padding:20px;">
-                                @include('components.mort')
-                                @include('components.leav')
-                                @include('components.hist')
-                                @include('components.pens')
-                                @include('components.prop')
+                                <span id="loadingrequestdiv123" style='display:none;text-align:right; vertical-align:bottom;'>
+                                    <img src="{{ asset('images/busy.gif') }}"/>
+                                </span>
+                                <div id="results"></div>
                             </div>
                         </div>
                     </div>
@@ -89,6 +89,6 @@
             </div>
         </div>
     @endsection
-    <script src="{{ asset('js/toddle.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/toddle.js') }}"></script>
     <script src="{{ asset('js/preventRefresh.js') }}"></script>

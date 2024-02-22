@@ -12,9 +12,10 @@ class MortgagesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($kodis)
     {
-        //
+        $userMortgage = mortgages::where('kodisno', '=', $kodis)->paginate(5);
+        return view('components.mort', compact('userMortgage'));
     }
 
     /**

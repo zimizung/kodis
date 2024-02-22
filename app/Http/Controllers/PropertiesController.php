@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\properties;
 
 class PropertiesController extends Controller
 {
@@ -11,9 +12,10 @@ class PropertiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($kodis)
     {
-        //
+        $userProperty = properties::where('kodisno', '=', $kodis)->paginate(5);
+        return view('components.prop', compact('userProperty'));
     }
 
     /**

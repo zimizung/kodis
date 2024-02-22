@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\histories;
 
 class HistoriesController extends Controller
 {
@@ -11,9 +12,10 @@ class HistoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($kodis)
     {
-        //
+        $userHistory = histories::where('kodisno', '=', $kodis)->paginate(5);
+        return view('components.hist', compact('userHistory'));
     }
 
     /**

@@ -47,20 +47,6 @@ class HomeController extends Controller
     public function getUser($kodis){
 
         $userDetails = personals::where('kodisno', '=', $kodis)->first();
-
-        $userPensions = pensions::where('kodisno', '=', $kodis)->paginate(5);
-
-        $userLeave = leaves::where('kodisno', '=', $kodis)->paginate(5);
-
-        $userHistory = histories::where('kodisno', '=', $kodis)->paginate(5);
-
-        $userProperty = properties::where('kodisno', '=', $kodis)->paginate(5);
-
-        $userMortgage = mortgages::where('kodisno', '=', $kodis)->paginate(5);
-
-        // echo '<pre>'; print_r($userLeave);die;
-
-
-        return view('display', compact('userDetails', 'userPensions', 'userMortgage', 'userProperty', 'userHistory', 'userLeave'));
+        return view('display', compact('userDetails'));
     }
 }

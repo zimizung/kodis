@@ -33,12 +33,12 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/userDetail/{kodis}', [HomeController::class, 'getUser'])->name('userDetails');
 
-Route::get('/history', [HistoriesController::class, 'index'])->name('history');
+Route::get('/history/{kodis}', [HistoriesController::class, 'index'])->name('history');
 Route::get('/leavecredit', [LeavecreditsController::class, 'index'])->name('leavecredits');
-Route::get('/leave', [LeavesController::class, 'index'])->name('leave');
-Route::get('/mortgage', [MortgagesController::class, 'index'])->name('mortgage');
-Route::get('/pension', [PensionsController::class, 'index'])->name('pension');
+Route::get('/leave/{kodis}', [LeavesController::class, 'index'])->name('leave');
+Route::get('/mortgage/{kodis}', [MortgagesController::class, 'index'])->name('mortgage');
+Route::get('/pension/{kodis}', [PensionsController::class, 'index'])->name('pension');
 Route::get('/personal', [PersonalsController::class, 'index'])->name('personal');
-Route::get('/property', [PropertiesController::class, 'index'])->name('property');
+Route::get('/property/{kodis}', [PropertiesController::class, 'index'])->name('property');
 Route::get('/user', [UsersController::class, 'index'])->name('user');
 Route::get('/vpen', [VpensController::class, 'index'])->name('vpen');

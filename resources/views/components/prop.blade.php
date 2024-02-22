@@ -1,4 +1,4 @@
-<div id="prop" class="prop" style="display: none">
+<div id="prop" class="prop">
     @if($userProperty->isEmpty())
         <div style="display: flex; justify-content:center; margin-bottom:5px;">
             No Data Found

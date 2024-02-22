@@ -1,4 +1,4 @@
-<div id="pens" class="pens" style="display: none">
+<div id="pens" class="pens">
     @if($userPensions->isEmpty())
         <div style="display: flex; justify-content:center; margin-bottom:5px;">
             No Data Found

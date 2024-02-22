@@ -1,4 +1,4 @@
-<div id="leav" class="leav" style="display: none">
+<div id="leav" class="leav">
     @if($userLeave->isEmpty())
         <div style="display: flex; justify-content:center; margin-bottom:5px;">
             No Data Found

@@ -1,4 +1,4 @@
-<div id="mort" class="mort" style="display: none">
+<div id="mort" class="mort">
     @if($userMortgage->isEmpty())
         <div style="display: flex; justify-content:center; margin-bottom:5px;">
             No Data Found
