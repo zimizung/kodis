@@ -74,11 +74,11 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="cont2 py-10">
                         <div style="margin:20px 0px 20px 0px;">
                             <div class="bg-white overflow-hidden shadow sm:rounded-lg" style="padding:20px;">
-                                <span id="loadingrequestdiv123" style='display:none;text-align:right; vertical-align:bottom;'>
+                                <span id="loadingrequestdiv123" style='display: flex; justify-content:center;'>
                                     <img src="{{ asset('images/busy.gif') }}"/>
                                 </span>
                                 <div id="results"></div>
